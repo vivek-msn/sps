@@ -118,18 +118,27 @@
 	 	 	var interest=(this.salary*5)/100;
 	 	 	return interest;
 	  	 }
-	  	 person.prototype.calucateAge=function(){
-	  	 	var age=2019-(this.age);
-	  	 	return age;
-	  	 }
-	  	 person.prototype.calucateminage=function(){
-	  	 	var min=27;
+	  	 // person.prototype.calucateAge=function(){
+	  	 // 	var age=2019-(this.age);
+	  	 // 	return age;
+	  	 // }
+	  	 // person.prototype.calucateminage=function(){
+	  	 // 	var min=27;
 
-	  	 	// if(this.age<min)
-	  	 	// {
-	  	 	// 	return min;
-	  	 	// }
-	  	 	return min;
+	  	 // 	// if(this.age<min)
+	  	 // 	// {
+	  	 // 	// 	return min;
+	  	 // 	// }
+	  	 // 	return min;
+	  	 // }
+
+
+
+	  	 function minAge(){
+	  	 	
+
+          var minAge= Math.min(rahul.age,durvesh.age,piyush.age,kashish.age,pintu.age,brijesh.age);
+          return minAge;
 	  	 }
 
 	 	var rahul=new person('Rahul',2011,25000,27,'Pune');
@@ -205,10 +214,8 @@
 
 	 			// Min Age
 	 			$("#btn3").click(function(){
-	 				var ag1=rahul.calucateminage();
-	 					// ag1=durvesh.calucateminage();
-	 					// ag1=piyush.calucateminage();
-	 					$("#display3").text(ag1);
+	 			
+	 			$("#display3").text(minAge());
 	 			});
 
 	 });
