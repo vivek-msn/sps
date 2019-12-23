@@ -146,20 +146,12 @@
 	 	 	var interest=(this.salary*5)/100;
 	 	 	return interest;
 	  	 }
-	  	 // person.prototype.calucateAge=function(){
-	  	 // 	var age=2019-(this.age);
-	  	 // 	return age;
-	  	 // }
-	  	 // person.prototype.calucateminage=function(){
-	  	 // 	var min=27;
-
-	  	 // 	// if(this.age<min)
-	  	 // 	// {
-	  	 // 	// 	return min;
-	  	 // 	// }
-	  	 // 	return min;
-	  	 // }
-
+	  	 
+	  	 function maxyear()
+	  	 {
+	  	 	var maxYear=Math.max(rahul.year,durvesh.year,piyush.year,kashish.year,pintu.year,brijesh.year);
+	  	 	return maxYear;
+	  	 }
 
 
 	  	 function minAge(){
@@ -234,10 +226,9 @@
 	 		var totalinterest=rahul.calculateInterest()+durvesh.calculateInterest()+piyush.calculateInterest()+kashish.calculateInterest()+pintu.calculateInterest()+brijesh.calculateInterest();
 	 		$("#display4").text(totalinterest);
 	 	});
-	 			// Max Year
+	 			// Max year
 	 			$("#btn1").click(function(){
-	 			var year=rahul.calucateAge();
-	 			$("#display1").text(year);
+	 				$("#display1").text(maxyear);
 	 			});
 
 	 			// Min Age
