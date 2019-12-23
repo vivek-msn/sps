@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Table in Jquery with the use of Constructor & Bootstrap</title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<style>
+	
+	</style>
+	</head>
+	<body>
+	<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Year</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Age</th>
+      <th scope="col">City</th>
+      <th scope="col">Interest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="name1"></td>
+      <td id="year1"></td>
+      <td id="salary1"></td>
+      <td id="age1"></td>
+      <td id="city1"></td>
+      <td id="int1"></td>       
+    </tr>
+    <tr>
+      <td id="name2"></td>
+      <td id="year2"></td>
+      <td id="salary2"></td>
+      <td id="age2"></td>
+      <td id="city2"></td>
+      <td id="int2"></td>          
+    </tr>
+    <tr>
+      <td id="name3"></td>
+      <td id="year3"></td>
+      <td id="salary3"></td>
+      <td id="age3"></td>
+      <td id="city3"></td>
+      <td id="int3"></td>
+    </tr> 
+    <tr>
+      <td id="name4"></td>
+      <td id="year4"></td>
+      <td id="salary4"></td>
+      <td id="age4"></td>
+      <td id="city4"></td>
+      <td id="int4"></td>      
+    </tr>
+    <tr>
+      <td id="name5"></td>
+      <td id="year5"></td>
+      <td id="salary5"></td>   
+      <td id="age5"></td>               
+      <td id="city5"></td>
+	  <td id="int5"></td>
+      </tr>
+     <tr>
+      <td id="name6"></td>
+      <td id="year6"></td>
+      <td id="salary6"></td>
+      <td id="age6"></td>
+      <td id="city6"></td>
+      <td id="int6"></td>
+      </tr>
+      <th scope="row">Total
+     </th>
+      </tbody>
+      </table>
+                             <!-- Display Box  Start-->
+      <div class="row">
+			<div class="border" id="display1" style="width: 80px; height: 30px; margin-left: 252px;">
+			</div>
+			<div class="border" id="display2" style="width: 80px; height: 30px; margin-left: 105px;">
+			</div>
+			<div class="border" id="display3" style="width: 80px; height: 30px; margin-left: 117px;">
+			</div>
+			<div class="border" id="display4" style="width: 80px; height: 30px; margin-left: 384px;">
+			</div>
+                             <!-- Display Box End -->
+
+
+                             <!-- Buttons Start -->
+	 <div class="row">
+		<button type="button" id="btn1" class="btn btn-primary" style="margin-top: 9px; margin-left:261px ">Max Year</button>
+		<button type="button" id="btn2" class="btn btn-primary" style="margin-top: 9px; margin-left:94px ">AVG Salary</button>
+		<button type="button" id="btn3" class="btn btn-primary"style="margin-top: 9px;margin-left:100px ">Min Age</button>
+		<button type="button" id="btn4" class="btn btn-primary" style="margin-left: 381px; margin-top: 9px;" >Interest</button>
+	</div>
+                             <!-- Button End -->
+
+
+                             <!-- J-Query Start -->
+
+	 <script >
+	 	$(document).ready(function(){
+	 	var person=function(name,year,salary,age,city,interest)
+	 		{
+	 		this.name=name;
+	 		this.year=year;
+	 		this.salary=salary;
+	 		this.age=age;
+	 		this.city=city;
+	 		this.interest=interest;
+	 		}
+	 	 person.prototype.calculateInterest=function(){
+	 	 	var interest=(this.salary*5)/100;
+	 	 	return interest;
+	  	 }
+	  	 person.prototype.calucateAge=function(){
+	  	 	var age=2019-(this.age);
+	  	 	return age;
+	  	 }
+	  	 person.prototype.calucateminage=function(){
+	  	 	var min=27;
+
+	  	 	// if(this.age<min)
+	  	 	// {
+	  	 	// 	return min;
+	  	 	// }
+	  	 	return min;
+	  	 }
+
+	 	var rahul=new person('Rahul',2011,25000,27,'Pune');
+	 	var durvesh=new person('Durvesh',2010,25000,28,'Kashipur');
+	 	var piyush=new person('Piyush',2011,35000,29,'Banglore');
+	 	var kashish=new person('Kashish',2012,30000,30,'Chennai');
+	 	var pintu=new person('Pintu',2012,31000,28,'Ghaziabad');
+	 	var brijesh=new person('Brijesh',2010,40000,27,'Gurgao');
+	 	function data()
+	 	{
+	 		$('#name1').text(rahul.name);
+	 		$('#year1').text(rahul.year);
+	 		$('#salary1').text(rahul.salary);
+	 		$('#age1').text(rahul.age);
+	 		$('#city1').text(rahul.city);
+	 		$("#int1").text(rahul.calculateInterest());
+
+	 		$('#name2').text(durvesh.name);
+	 		$('#year2').text(durvesh.year);
+	 		$('#salary2').text(durvesh.salary);
+	 		$('#age2').text(durvesh.age);
+	 		$('#city2').text(durvesh.city);
+	 		$("#int2").text(durvesh.calculateInterest());
+
+	 		$('#name3').text(piyush.name);
+	 		$('#year3').text(piyush.year);
+	 		$('#salary3').text(piyush.salary);
+	 		$('#age3').text(piyush.age);
+	 		$('#city3').text(piyush.city);
+	 		$("#int3").text(piyush.calculateInterest());
+
+	 		$('#name4').text(kashish.name);
+	 		$('#year4').text(kashish.year);
+	 		$('#salary4').text(kashish.salary);
+	 		$('#age4').text(kashish.age);
+	 		$('#city4').text(kashish.city);
+	 		$("#int4").text(kashish.calculateInterest());
+
+	 		$('#name5').text(pintu.name);
+	 		$('#year5').text(pintu.year);
+	 		$('#salary5').text(pintu.salary);
+	 		$('#age5').text(pintu.age);
+	 		$('#city5').text(pintu.city);
+	 		$("#int5").text(pintu.calculateInterest());
+
+	 		$('#name6').text(brijesh.name);
+	 		$('#year6').text(brijesh.year);
+	 		$('#salary6').text(brijesh.salary);
+	 		$('#age6').text(brijesh.age);
+	 		$('#city6').text(brijesh.city);
+	 		$("#int6").text(brijesh.calculateInterest());
+	 	}
+
+	 	data();
+	 				// Avergae Salary
+
+	 		$("#btn2").click(function(){
+	 		var avgSalary=(rahul.salary+durvesh.salary+piyush.salary+kashish.salary+pintu.salary+brijesh.salary)/6;
+	 		$("#display2").text(avgSalary);
+
+	 	});
+
+	 				// Total Interest
+	 		$("#btn4").click(function(){
+	 		var totalinterest=rahul.calculateInterest()+durvesh.calculateInterest()+piyush.calculateInterest()+kashish.calculateInterest()+pintu.calculateInterest()+brijesh.calculateInterest();
+	 		$("#display4").text(totalinterest);
+	 	});
+	 			// Max Year
+	 			$("#btn1").click(function(){
+	 			var year=rahul.calucateAge();
+	 			$("#display1").text(year);
+	 			});
+
+	 			// Min Age
+	 			$("#btn3").click(function(){
+	 				var ag1=rahul.calucateminage();
+	 					// ag1=durvesh.calucateminage();
+	 					// ag1=piyush.calucateminage();
+	 					$("#display3").text(ag1);
+	 			});
+
+	 });
+
+
+	 </script>
+	</body>
+</html>
